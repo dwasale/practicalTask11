@@ -1,4 +1,5 @@
 // Create a new function named shoes
+// Object constructors
 function shoes(name, product_code, quantity, value_per_item){
     this.name = name;
     this.product_code = product_code;
@@ -23,18 +24,23 @@ function searchShoe(item){
         } 
     }
 };
+// Displaying on the console
 console.table(allShoes);
 console.log("--------Table according to the given value---------")
 console.table(searchShoe("Nike"));
 // Function to find the lowest item per value
+// Also it will give the value per item in ascending order/ Which has the less value per item
 function lowestValue(item){
     item.sort((firstShoe, secondShoe) =>
     firstShoe.value_per_item < secondShoe.value_per_item ? -1 : 1
 );
+// Use template and string literals to dispaly the details
 console.log(`The item with the less value per item is ${item[0].name}, 
 which value is ${item[0].value_per_item}.`);
 };
+// Calling thr function
 lowestValue(allShoes);
+// Displaying on the console
 console.log("-----------------Table in ascending order------------------")
 console.table(allShoes);
 console.log("-------------------------------------------------------")
@@ -44,14 +50,17 @@ function highestValue(item){
     item.sort((firstItem, secondItem) =>
     firstItem.value_per_item > secondItem.value_per_item ? -1 : 1
 );
+// Use template and string literals to dispaly the details
 console.log(`The item with the high value per item is ${item[0].name}, 
 which value is ${item[0].value_per_item}`);
 }
 highestValue(allShoes);
 // Function to eidt all four properties for each of five shoe
 function editProperties(allShoes, item, newItem){
+// Try catch block if any error occur while running the code below
     try{
     for (let i = 0; i < allShoes.length; i++){
+// Checking each item according to the given item and replacing with new one
         if (allShoes[i].name === item){
             allShoes[i]["name"] = newItem;
         } else if (allShoes[i].product_code === item) {
@@ -63,10 +72,13 @@ function editProperties(allShoes, item, newItem){
             return allShoes[i];
         }
     };
+// If any error then it will catches and throw the erro massage 
 } catch (err){
     console.log(err);
 }
 }
+//calling the editProperties functions with the older value to be replaced with new value
 editProperties(allShoes, 6, 7);
 console.log("\nThe updated table: ");
+// Prints the array in table format on the console
 console.table(allShoes);
