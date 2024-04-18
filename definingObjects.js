@@ -70,3 +70,25 @@ editColor(cars,"Red", "White");
 // Display the updated car details in a table. 
 console.log("\nThe updated table: ");
 console.table(cars);
+// Getter and Setter
+let vehicle = {
+    brand: "Tesla",
+    model: "Model S",
+    year: 2020,
+    color: "Blue",
+    // Getter method to return color
+    get getColor(){
+        return this.color;
+    },
+    // Setter method to change the model
+    set newModel(newModel){
+        this.model = newModel;
+    },
+};
+
+// Calling the setter method
+vehicle.newModel = 2023;
+// Calling the getter method and displaying to console
+console.log(vehicle.getColor);
+// The properties can still be access without the getter 
+console.log(vehicle.model);
