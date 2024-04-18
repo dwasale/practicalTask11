@@ -51,3 +51,22 @@ ${array[0].model}, which was made in ${array[0].year}`);
 }
 // Call the findNewCar function
 findNewCar(cars);
+
+// Updating the properties of an array
+// Define an edit function that takes 3 parameters
+function editColor(cars, carColor, newColor){
+    // Loop through each car object in the array
+    for (let i = 0; i < cars.length; i++){
+        // If current car color matches the value passed ti thge carColor parameter
+        if (cars[i].color === carColor){
+            // Update the color property to the value passed to the newColor parameter
+            cars[i]["color"] = newColor;
+            return cars[i];
+        }
+    }
+}
+// Call athe function to change the color of a car from Red to White
+editColor(cars,"Red", "White");
+// Display the updated car details in a table. 
+console.log("\nThe updated table: ");
+console.table(cars);
