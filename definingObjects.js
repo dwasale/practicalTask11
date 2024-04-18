@@ -21,8 +21,13 @@ function carDescription(brand, model, year, color){
     this.color = color;
 }
 // Create object instance
-let car1 = new carDescription("Tesla", "Model S", 2024, "Red&");
+let car1 = new carDescription("Tesla", "Model S", 2024, "Red");
 let car2 = new carDescription("Mercedes", "G-Wagon", 2024, "Grey");
+car1["transmission"] = "Automatic";
+car2.engineType = "Electric";
+
+console.log(car1["transmission"]);
+console.log(car2.engineType);
 // Dot notation
 console.log(car1.color);
 console.log(car2.model);
